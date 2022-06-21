@@ -12,6 +12,7 @@ public class Q9 {
     static BufferedWriter bw;
     static StringTokenizer st;
     static int [] Button;
+    static int [] dat;
 
     static int T, N,M,K;
     static int result = 0;
@@ -29,8 +30,10 @@ public class Q9 {
 
             N = Integer.parseInt(st.nextToken());
             M = Integer.parseInt(st.nextToken());
-            K = Integer.parseInt(st.nextToken());74-
+            K = Integer.parseInt(st.nextToken());
             Button = new int[N];
+            dat = new int[M];
+
 
             st = new StringTokenizer(br.readLine());
             for(int j =0; j<N;j++)
@@ -39,13 +42,49 @@ public class Q9 {
 
             }
 
-            for(int j =0; j<N;j++)
-            {
-                find(Button[j]);
+            for(int j=0;j<M;j++){
+                for(int a = 0;a<N;a++){
+                    int target = j+Button[a] % M;
+
+                    if(target < 0 )
+                    {
+                        target = target * -1;
+                    }
+
+                    if(target == j)
+                        dat[j]++;
+
+                }
             }
 
-            bw.write(result+"\n");
+            
+            for(int j=0;j<N;j++){
+                for(int a = 0;a<N;a++){
 
+                    int target = (Button[j] + Button[a]) % M;
+
+                    if(target < 0){
+                        target = target * -1;
+                    }
+
+                    dat[target]++;
+               
+                }
+            }
+
+
+
+            
+
+            for(int j =0; j<M;j++)
+            {
+                
+                 bw.write(dat[j]+ " ");
+            }
+
+            
+           // bw.write(result+"\n");
+            
         }
 
         bw.flush();
