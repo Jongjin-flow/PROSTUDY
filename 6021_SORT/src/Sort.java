@@ -4,7 +4,7 @@ public class Sort {
     public static void main(String[] args) throws Exception {
         //1. 일반적인 정렬
         // Arrays.sort(arr); - 오름차순
-        // Arrays.sort(arr,Collections.reverseOrder()); -- 내림차순
+        // Arrays.sort(arr,Collections.reverseOrder()); -- 내림차순 배열은 int는 불가능 -> Integer로 해야한다.
 
         //2. custom 배열!
         People []a = new People[4];
