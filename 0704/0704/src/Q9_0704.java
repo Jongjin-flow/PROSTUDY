@@ -67,7 +67,6 @@ public class Q9_0704 {
                 left = mid +1;
             }
             // mid = target
-            else{
                 return;
             }
         }
