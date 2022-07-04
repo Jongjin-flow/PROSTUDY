@@ -7,13 +7,13 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-public class Q11279 {
+public class Q1927 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        PriorityQueue <Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue <Integer> pq = new PriorityQueue<>();
         
         int n = Integer.parseInt(st.nextToken());
 

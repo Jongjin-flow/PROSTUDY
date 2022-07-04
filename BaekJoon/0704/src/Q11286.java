@@ -7,13 +7,13 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-public class Q11279 {
+public class Q11286 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        PriorityQueue <Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue <Number> pq = new PriorityQueue<>();
         
         int n = Integer.parseInt(st.nextToken());
 
@@ -24,11 +24,11 @@ public class Q11279 {
                 if(pq.size() == 0)
                     bw.write(0 + "\n");
                 else{
-                    int sol = pq.poll() ;
-                    bw.write(sol + "\n");
+                    Number sol = pq.poll() ;
+                    bw.write(sol.number + "\n");
                 }
             }else{
-                pq.add(num);
+                pq.add(new Number(num));
             }
                 
         }
@@ -37,4 +37,27 @@ public class Q11279 {
         bw.close();
     }
 
+    static class Number implements Comparable<Number>{
+        int number;
+
+        public Number(int number){
+            this.number = number;
+        }
+
+        @Override
+        public int compareTo(Number next) {
+            // TODO Auto-generated method stub
+            if(Math.abs(number) < Math.abs(next.number))
+                return -1;
+            if(Math.abs(number) > Math.abs(next.number))
+                return 1;   
+            if(number < next.number)
+                return -1;
+            if(number > next.number)
+                return 1;
+
+            return 0;
+        }
+        
+    }
 }
